@@ -12,10 +12,10 @@ After GitHub Pages is live:
 ## Publish (one-time)
 
 1. In **GitHub Desktop**, click **Publish repository** → name `Pomio-Legal` → Public.
-2. On GitHub: **Settings → Pages → Build and deployment → Branch: `gh-pages` / `/ (root)`**.
-3. Push to `main` (workflow publishes to `gh-pages` automatically).
+2. On GitHub: **Settings → Pages → Build and deployment → Source: `GitHub Actions`**.
+3. Push to `main` — the workflow deploys automatically (no `gh-pages` branch needed).
 
-The workflow in `.github/workflows/pages.yml` deploys on every push to `main`.
+The workflow in `.github/workflows/pages.yml` uses the official GitHub Pages deploy action.
 
 ## Regenerate pages
 
