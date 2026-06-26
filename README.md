@@ -9,18 +9,20 @@ After GitHub Pages is live:
 - **Privacy Policy:** https://opheliasfather.github.io/Pomio-Legal/privacy-policy.html
 - **Terms of Use:** https://opheliasfather.github.io/Pomio-Legal/terms-of-use.html
 
-## Publish (one-time)
+## Enable GitHub Pages (important)
 
-1. In **GitHub Desktop**, click **Publish repository** → name `Pomio-Legal` → Public.
-2. On GitHub: **Settings → Pages → Build and deployment → Source: `GitHub Actions`**.
-3. Push to `main` — the workflow deploys automatically (no `gh-pages` branch needed).
+`has_pages` must be turned on once in the repo settings:
 
-The workflow in `.github/workflows/pages.yml` uses the official GitHub Pages deploy action.
+1. Open: https://github.com/opheliasfather/Pomio-Legal/settings/pages
+2. **Build and deployment → Source:** choose **Deploy from a branch** (not “GitHub Actions”).
+3. **Branch:** `main` → folder **`/ (root)`** → **Save**.
+4. Wait 1–3 minutes, then open the Privacy Policy URL above.
+
+If you previously picked `gh-pages` or **GitHub Actions**, switch to **`main` / root** — all HTML files live on `main`.
 
 ## Regenerate pages
 
-After editing `generate_pages.py`:
-
 ```bash
 python3 generate_pages.py
+git add -A && git commit -m "Update legal copy" && git push
 ```
